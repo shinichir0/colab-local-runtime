@@ -1,1 +1,1 @@
-# colab-local-runtime
+# jupyter-notebook-settings
