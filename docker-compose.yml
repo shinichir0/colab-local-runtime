@@ -8,6 +8,7 @@ services:
     volumes:
       - "./datasets:/workspace/datasets"
       - "./outputs:/workspace/outputs"
+      - "./notes:/workspace/notes"
       - "./.jupyter:/root/.jupyter"
     working_dir: /workspace
     privileged: true
