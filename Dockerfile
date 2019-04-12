@@ -21,9 +21,10 @@ RUN echo 'eval "$(pyenv init -)"' >> ~/.bashrc && eval "$(pyenv init -)"
 RUN apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 RUN pyenv install 3.7.3 && pyenv global 3.7.3
-#RUN pip install pipenv
-RUN pip install https://download.pytorch.org/whl/cu100/torch-1.0.1.post2-cp37-cp37m-linux_x86_64.whl
-RUN pip install torchvision dask matplotlib pillow pandas
+RUN pip install pipenv
+COPY Pipfile ./
+COPY Pipfile.lock ./
+RUN set -ex && pipenv install --system --dev --skip-lock
 
 RUN apt-get install curl unzip -y
 RUN mkdir -p /usr/share/fonts/opentype/noto
@@ -36,15 +37,14 @@ RUN fc-cache -f
 RUN echo "\nfont.family: Noto Sans CJK JP" >> $(python -c 'import matplotlib as m; print(m.matplotlib_fname())') \
   && rm -f ~/.cache/matplotlib/font*
 
-RUN pip install jupyter_http_over_ws \
-  && jupyter serverextension enable --py jupyter_http_over_ws
+RUN pip install jupyter_http_over_ws
+RUN jupyter contrib nbextension install --user
+RUN mkdir -p $(jupyter --data-dir)/nbextensions
+RUN git clone https://github.com/lambdalisue/jupyter-vim-binding $(jupyter --data-dir)/nbextensions/vim_binding
+RUN jt -t chesterish -vim
 
 RUN set -ex && mkdir /workspace
 
 WORKDIR /workspace
-
-#COPY Pipfile ./
-#COPY Pipfile.lock ./
-#RUN set -ex && pipenv install --deploy --system --dev
 
 ENV PYTHONPATH "/workspace"

@@ -1,0 +1,6 @@
+{
+  "load_extensions": {
+    "ruler/edit": true,
+    "codefolding/edit": true
+  }
+}

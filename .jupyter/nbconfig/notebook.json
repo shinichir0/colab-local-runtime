@@ -1,0 +1,22 @@
+{
+  "load_extensions": {
+    "nbextensions_configurator/config_menu/main": true,
+    "contrib_nbextensions_help_item/main": true,
+    "vim_binding/vim_binding": true,
+    "toggle_all_line_numbers/main": true,
+    "code_prettify/isort": true,
+    "code_prettify/autopep8": true,
+    "livemdpreview/livemdpreview": true,
+    "codefolding/main": true,
+    "execute_time/ExecuteTime": true,
+    "hinterland/hinterland": true,
+    "toc2/main": true,
+    "varInspector/main": true,
+    "ruler/main": true,
+    "latex_envs/latex_envs": true,
+    "comment-uncomment/main": true,
+    "scratchpad/main": true,
+    "gist_it/main": true
+  },
+  "comment_uncomment_keybinding": "alt-/"
+}
