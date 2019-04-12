@@ -15,6 +15,7 @@ pillow = "*"
 torch = {file = "https://download.pytorch.org/whl/cu100/torch-1.0.1.post2-cp37-cp37m-linux_x86_64.whl"}
 torchvision = "*"
 tensorflow-gpu = "==2.0.0-alpha0"
+kaggle = "*"
 jupyter = "*"
 jupyter-contrib-nbextensions = "*"
 jupyter-nbextensions-configurator = "*"
