@@ -10,6 +10,7 @@ services:
       - "./outputs:/workspace/outputs"
       - "./notes:/workspace/notes"
       - "./.jupyter:/root/.jupyter"
+      - "./.ipython/profile_default/ipython_config.py:/root/.ipython/profile_default/ipython_config.py"
     working_dir: /workspace
     privileged: true
     environment:
