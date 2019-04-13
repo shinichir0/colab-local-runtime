@@ -9,11 +9,6 @@ services:
       - "./datasets:/workspace/datasets"
       - "./outputs:/workspace/outputs"
       - "./notes:/workspace/notes"
-      - "./.jupyter/nbconfig:/root/.jupyter/nbconfig"
-      - "./.jupyter/jupyter_nbconvert_config.json:/root/.jupyter/jupyter_nbconvert_config.json"
-      - "./.jupyter/jupyter_notebook_config.json:/root/.jupyter/jupyter_notebook_config.json"
-      - "./.jupyter/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py"
-      - "./.ipython/profile_default/ipython_config.py:/root/.ipython/profile_default/ipython_config.py"
     working_dir: /workspace
     privileged: true
     environment:

@@ -45,6 +45,12 @@ RUN jupyter notebook --generate-config
 RUN ipython profile create
 RUN jt -t onedork -vim -T -N -ofs 11 -f hack -tfs 11 -cellw 75%
 
+COPY .jupyter/nbconfig ${HOME}/.jupyter/nbconfig
+COPY .jupyter/jupyter_nbconvert_config.json ${HOME}/.jupyter/jupyter_nbconvert_config.json
+COPY .jupyter/jupyter_notebook_config.json ${HOME}/.jupyter/jupyter_notebook_config.json
+COPY .jupyter/jupyter_notebook_config.py ${HOME}/.jupyter/jupyter_notebook_config.py
+COPY .ipython/profile_default/ipython_config.py ${HOME}/.ipython/profile_default/ipython_config.py"
+
 RUN set -ex && mkdir /workspace
 
 WORKDIR /workspace
