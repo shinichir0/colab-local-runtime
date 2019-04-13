@@ -2,7 +2,7 @@
 # Created by https://www.gitignore.io/api/linux,python,pycharm,jupyternotebook
 # Edit at https://www.gitignore.io/?templates=linux,python,pycharm,jupyternotebook
 
-datasets/
+/datasets/
 
 ### JupyterNotebook ###
 .ipynb_checkpoints
@@ -185,17 +185,10 @@ docs/_build/
 target/
 
 # Jupyter Notebook
-.jupyter/*
-!.jupyter/nbconfig
-!.jupyter/jupyter_nbconvert_config.json
-!.jupyter/jupyter_notebook_config.json
-!.jupyter/jupyter_notebook_config.py
 
 # IPython
-.ipython/*
-!.ipython/profile_default
-.ipython/profile_default/*
-!.ipython/profile_default/ipython_config.py
+profile_default/
+ipython_config.py
 
 # pyenv
 .python-version

@@ -49,7 +49,7 @@ COPY .jupyter/nbconfig ${HOME}/.jupyter/nbconfig
 COPY .jupyter/jupyter_nbconvert_config.json ${HOME}/.jupyter/jupyter_nbconvert_config.json
 COPY .jupyter/jupyter_notebook_config.json ${HOME}/.jupyter/jupyter_notebook_config.json
 COPY .jupyter/jupyter_notebook_config.py ${HOME}/.jupyter/jupyter_notebook_config.py
-COPY .ipython/profile_default/ipython_config.py ${HOME}/.ipython/profile_default/ipython_config.py
+RUN cat .ipython/profile_default/ipython_config.py | sed -e "s/exec_lines = \[\]/exec_lines = \['%matplotlib inline'\]/g" > .ipython/profile_default/ipython_config.py
 
 RUN set -ex && mkdir /workspace
 
