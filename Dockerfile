@@ -41,7 +41,9 @@ RUN pip install jupyter_http_over_ws
 RUN jupyter contrib nbextension install --user
 RUN mkdir -p $(jupyter --data-dir)/nbextensions
 RUN git clone https://github.com/lambdalisue/jupyter-vim-binding $(jupyter --data-dir)/nbextensions/vim_binding
-RUN jt -t chesterish -vim
+RUN jupyter notebook --generate-config
+RUN ipython profile create
+RUN jt -t onedork -vim -T -N -ofs 11 -f hack -tfs 11 -cellw 75%
 
 RUN set -ex && mkdir /workspace
 

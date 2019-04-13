@@ -185,6 +185,11 @@ docs/_build/
 target/
 
 # Jupyter Notebook
+.jupyter/*
+!.jupyter/nbconfig
+!.jupyter/jupyter_nbconvert_config.json
+!.jupyter/jupyter_notebook_config.json
+!.jupyter/jupyter_notebook_config.py
 
 # IPython
 .ipython/*
