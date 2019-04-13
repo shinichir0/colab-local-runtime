@@ -16,6 +16,8 @@ torch = {file = "https://download.pytorch.org/whl/cu100/torch-1.0.1.post2-cp37-c
 torchvision = "*"
 tensorflow-gpu = "==2.0.0-alpha0"
 kaggle = "*"
+ipython = "*"
+ipyparallel = "*"
 jupyter = "*"
 jupyter-contrib-nbextensions = "*"
 jupyter-nbextensions-configurator = "*"

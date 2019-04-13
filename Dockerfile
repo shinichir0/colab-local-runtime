@@ -65,6 +65,7 @@ RUN jupyter nbextension enable gist_it/main
 RUN jupyter nbextension enable vim_binding/vim_binding
 RUN jupyter nbextension enable ruler/edit
 RUN jupyter nbextension enable codefolding/edit
+RUN ipcluster nbextension enable
 
 COPY .jupyter/jupyter_notebook_config.py ${HOME}/.jupyter/jupyter_notebook_config.py
 RUN cat ${HOME}/.ipython/profile_default/ipython_config.py | sed -e "s/exec_lines = \[\]/exec_lines = \['%matplotlib inline'\]/g" | tee ${HOME}/.ipython/profile_default/ipython_config.py
