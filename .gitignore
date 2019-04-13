@@ -3,6 +3,7 @@
 # Edit at https://www.gitignore.io/?templates=linux,python,pycharm,jupyternotebook
 
 /datasets/
+/notes/
 
 ### JupyterNotebook ###
 .ipynb_checkpoints
