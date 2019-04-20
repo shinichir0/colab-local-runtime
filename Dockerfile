@@ -46,7 +46,7 @@ RUN git clone https://github.com/lambdalisue/jupyter-vim-binding $(jupyter --dat
 RUN jupyter nbextension enable vim_binding/vim_binding
 RUN jupyter notebook --generate-config
 RUN ipython profile create
-RUN jt -t onedork -vim -T -N -ofs 11 -f hack -tfs 11 -cellw 75%
+RUN jt -t onedork -vim -T -N -ofs 11 -f hack -tfs 11 -cellw 95%
 
 RUN jupyter nbextension enable toggle_all_line_numbers/main
 RUN jupyter nbextension enable code_prettify/isort
@@ -68,7 +68,7 @@ RUN jupyter nbextension enable codefolding/edit
 RUN ipcluster nbextension enable
 
 COPY .jupyter/jupyter_notebook_config.py ${HOME}/.jupyter/jupyter_notebook_config.py
-RUN cat ${HOME}/.ipython/profile_default/ipython_config.py | sed -e "s/exec_lines = \[\]/exec_lines = \['%matplotlib inline'\]/g" | tee ${HOME}/.ipython/profile_default/ipython_config.py
+RUN cat ${HOME}/.ipython/profile_default/ipython_config.py | sed -e "s/#c.InteractiveShellApp.exec_lines = \[\]/c.InteractiveShellApp.exec_lines = \['%matplotlib inline', 'from jupyterthemes import jtplot', 'jtplot.style()'\]/g" | tee ${HOME}/.ipython/profile_default/ipython_config.py
 
 RUN set -ex && mkdir /workspace
 
