@@ -62,6 +62,8 @@ RUN jupyter nbextension enable latex_envs/latex_envs
 RUN jupyter nbextension enable comment-uncomment/main
 RUN jupyter nbextension enable scratchpad/main
 RUN jupyter nbextension enable gist_it/main
+RUN jupyter nbextension enable keyboard_shortcut_editor/main
+RUN jupyter nbextension enable select_keymap/main
 RUN jupyter nbextension enable vim_binding/vim_binding
 RUN jupyter nbextension enable ruler/edit
 RUN jupyter nbextension enable codefolding/edit
