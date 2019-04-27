@@ -1,7 +1,6 @@
 version: '2.3'
 services:
   jupyterlab:
-    build: .
     image: shinn1r0/jupyter-notebook-gpu
     ports:
       - "8888:8888"

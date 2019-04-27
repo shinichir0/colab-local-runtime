@@ -21,7 +21,7 @@ RUN echo 'eval "$(pyenv init -)"' >> ~/.bashrc && eval "$(pyenv init -)"
 RUN apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 RUN pyenv install 3.7.3 && pyenv global 3.7.3
-RUN pip install pipenv
+RUN pip install --upgrade pip setuptools pipenv
 COPY Pipfile ./
 COPY Pipfile.lock ./
 RUN set -ex && pipenv install --system --dev --skip-lock
