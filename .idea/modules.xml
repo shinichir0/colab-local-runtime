@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/colab-local-runtime.iml" filepath="$PROJECT_DIR$/.idea/colab-local-runtime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/jupyter-notebook-gpu-settings.iml" filepath="$PROJECT_DIR$/.idea/jupyter-notebook-gpu-settings.iml" />
     </modules>
   </component>
 </project>
