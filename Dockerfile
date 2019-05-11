@@ -22,9 +22,10 @@ RUN apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev lib
 
 RUN pyenv install 3.7.3 && pyenv global 3.7.3
 RUN pip install --upgrade pip setuptools pipenv
-COPY Pipfile ./
-COPY Pipfile.lock ./
-RUN set -ex && pipenv install --system --dev --skip-lock
+RUN pip install --upgrade ipython ipyparallel
+RUN pip install jupyter jupyter-contrib-nbextensions jupyter-nbextensions-configurator jupyterthemes
+RUN pip install jupyter_http_over_ws && jupyter serverextension enable --py jupyter_http_over_ws
+RUN pip install isort autopep8
 
 RUN apt-get install curl unzip -y
 RUN mkdir -p /usr/share/fonts/opentype/noto
@@ -37,8 +38,6 @@ RUN fc-cache -f
 RUN echo "\nfont.family: Noto Sans CJK JP" >> $(python -c 'import matplotlib as m; print(m.matplotlib_fname())') \
   && rm -f ~/.cache/matplotlib/font*
 
-RUN pip install jupyter_http_over_ws \
-  && jupyter serverextension enable --py jupyter_http_over_ws
 RUN jupyter contrib nbextension install --user
 RUN jupyter nbextensions_configurator enable --user
 RUN mkdir -p $(jupyter --data-dir)/nbextensions
