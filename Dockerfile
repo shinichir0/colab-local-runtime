@@ -1,5 +1,5 @@
 FROM nvidia/cuda:10.0-base
-LABEL maintainer="shinichir0 <github@shinichironaito.com>"
+LABEL maintainer="shinn1r0 <github@shinichironaito.com>"
 
 EXPOSE 8888
 ENV DEBIAN_FRONTEND noninteractive
