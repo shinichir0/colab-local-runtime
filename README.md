@@ -1,1 +1,1 @@
-# jupyter-notebook-gpu-settings
+# jupyter-notebook-gpu
